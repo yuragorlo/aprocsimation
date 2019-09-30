@@ -1,0 +1,28 @@
+# aprocsimation f(x) = sin(x / 5) * exp(x / 10) + 5 * exp(-x / 2)
+
+import math
+import math
+import matplotlib.pyplot as plt
+
+def f(x):
+    return math.sin(x/5.0)*math.exp(x/10.0)+5.0*math.exp(-x/2.0)
+    
+A = [[1, 1, 1, 1], [64, 16, 4, 1], [1000, 100, 10, 1], [3375, 225, 15, 1]]
+b = [f(1.0), f(4.0), f(10.0), f(15.0)]
+
+# b = [3.252216865271419, 1.7468459495903677, 2.5054164070002463, 0.6352214195786656]
+
+x = np.linalg.solve(A, b)
+
+# x = array([-0.00823565,  0.19333685, -1.29552587,  4.36264154])
+
+def y3(x):
+    return (-0.00823565*x*x*x)+(0.19333685*x*x)+(-1.29552587*x)+4.36264154
+    
+t = np.arange(1, 15, 0.1)
+ft = [f(x) for x in t]
+
+plt.plot([1, 4, 10, 15], [y3(1), y3(4), y3(10), y3(15)])
+plt.plot(t, ft, 'ro')
+plt.show
+
