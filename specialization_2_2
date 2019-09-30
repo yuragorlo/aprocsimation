@@ -1,4 +1,4 @@
-# aprocsimation f(x) = sin(x / 5) * exp(x / 10) + 5 * exp(-x / 2)
+# approcsimation f(x) = sin(x / 5) * exp(x / 10) + 5 * exp(-x / 2)
 
 import math
 import math
